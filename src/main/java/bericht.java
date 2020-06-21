@@ -708,14 +708,14 @@ public class bericht extends javax.swing.JFrame {
 
         jButton1.setText("Bericht Speichern");
 
-        jButton2.setText("Export PDF");
+        jButton2.setText("Exportieren als PDF");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Export Excel");
+        jButton3.setText("Exportieren als Excel");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -1479,7 +1479,7 @@ public class bericht extends javax.swing.JFrame {
 //            ImageIO.write(imagebuf, "jpeg", baos);
 //            Image iTextImage = Image.getInstance(baos.toByteArray());
 //            doc.add(iTextImage);
-            JOptionPane.showMessageDialog(this, "Exported as PDF Successfully");
+            JOptionPane.showMessageDialog(this, "Erfolgreich als PDF exportiert");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("error");
@@ -2054,7 +2054,7 @@ public class bericht extends javax.swing.JFrame {
 		workbook.write(fos);
 		fos.close();
 		System.out.println(fileName + " written successfully");
-                JOptionPane.showMessageDialog(this, "Exported as excel Successfully");
+                JOptionPane.showMessageDialog(this, "Erfolgreich als Excel exportiert");
         }catch(Exception ex){
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, ex.getMessage());
