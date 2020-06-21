@@ -364,27 +364,21 @@ public class bericht extends javax.swing.JFrame {
             }
         });
 
-        jTextField10.setText("Ekipman Bilgisinden Çek");
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
 
         jLabel20.setText("Cihaz");
 
-        jTextField11.setText("Ekipman Bilgisinden Çek");
-
         jLabel21.setText("MP Taşıyıcı Ortam");
-
-        jTextField12.setText("Ekipman Bilgisinden Çek");
 
         jLabel22.setText("Mıknatıslama Tekniği");
 
         jLabel23.setText("UV Işık Şiddeti");
 
         jLabel24.setText("Işık Mesafesi");
-
-        jTextField13.setText("Ekipman Bilgisinden Çek");
-
-        jTextField14.setText("Ekipman Bilgisinden Çek");
-
-        jTextField15.setText("Ekipman Bilgisinden Çek");
 
         jLabel25.setText("Muayene Bölgesi");
 
@@ -825,15 +819,14 @@ public class bericht extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel20)
                                         .addGap(137, 137, 137)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING))
-                                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(76, 76, 76)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField13)
+                                            .addComponent(jTextField14)
+                                            .addComponent(jTextField15)
+                                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                            .addComponent(jTextField11)
+                                            .addComponent(jTextField12))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel28)
                                             .addComponent(jLabel25)
@@ -1088,7 +1081,7 @@ public class bericht extends javax.swing.JFrame {
                             .addComponent(jLabel59)
                             .addComponent(jLabel60)
                             .addComponent(jLabel61))
-                        .addGap(0, 6, Short.MAX_VALUE)))
+                        .addGap(6, 6, 6)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1503,8 +1496,8 @@ public class bericht extends javax.swing.JFrame {
        //Write to excel code
         try{
             int rand = new Random().nextInt(100000000);
-        String fileName="bericht_exported_" + rand + ".xlsx";
-		
+        //String fileName="bericht_exported_" + rand + ".xlsx";
+	String fileName="Bericht_2019101621.xlsx";	
         
 		
 			 Workbook workbook = new XSSFWorkbook();
@@ -1531,7 +1524,7 @@ public class bericht extends javax.swing.JFrame {
                         
                         Row row2 = sheet.createRow(rowIndex++);
 			Cell cell1 = row2.createCell(0);
-			cell1.setCellValue("MANYETİK PARÇACIK MUAYENE RAPORU\nMAGNETIC PARTICLE INSPECTION REPORT");
+			cell1.setCellValue("MANYETİK PARÇACIK MUAYENE RAPORU");
                         cell1.setCellStyle(backgroundStyle);
                         
                   // Customer
@@ -1542,180 +1535,180 @@ public class bericht extends javax.swing.JFrame {
 			cell3_1.setCellValue(jComboBox1.getSelectedItem().toString());
                         
                         Cell cell3_2 = row3.createCell(2);
-			cell3_2.setCellValue("Muayene Prosedürü\nInspection Procedure");
+			cell3_2.setCellValue("Muayene Prosedürü");
                         Cell cell3_3 = row3.createCell(3);
 			cell3_3.setCellValue(jTextField5.getText());
                         
                           Cell cell3_4 = row3.createCell(4);
-			cell3_4.setCellValue("Sayfa No\nPage ");
+			cell3_4.setCellValue("Sayfa No");
                         Cell cell3_5 = row3.createCell(5);
 			cell3_5.setCellValue(jTextField5.getText());
                  
                  Row row4 = sheet.createRow(rowIndex++);
 			Cell cell4_0 = row4.createCell(0);
-			cell4_0.setCellValue("Proje Adı \nProject Name");
+			cell4_0.setCellValue("Proje Adı");
                         Cell cell4_1 = row4.createCell(1);
 			cell4_1.setCellValue(jTextField1.getText());
                         
                         Cell cell4_2 = row4.createCell(2);
-			cell4_2.setCellValue("Muayene Kapsamı \nInspection Scope");
+			cell4_2.setCellValue("Muayene Kapsamı");
                         Cell cell4_3 = row4.createCell(3);
 			cell4_3.setCellValue(jTextField6.getText());
                         
                           Cell cell4_4 = row4.createCell(4);
-			cell4_4.setCellValue("Rapor No\n Report No");
+			cell4_4.setCellValue("Rapor No");
                         Cell cell4_5 = row4.createCell(5);
 			cell4_5.setCellValue(jTextField9.getText());        
                         
                          Row row5 = sheet.createRow(rowIndex++);
 			Cell cell5_0 = row5.createCell(0);
-			cell5_0.setCellValue("Test Yeri\n Inspection Place");
+			cell5_0.setCellValue("Test Yeri");
                         Cell cell5_1 = row5.createCell(1);
 			cell5_1.setCellValue(jTextField2.getText());
                         
                         Cell cell5_2 = row5.createCell(2);
-			cell5_2.setCellValue("Resim No\nDrawing No ");
+			cell5_2.setCellValue("Resim No");
                         Cell cell5_3 = row5.createCell(3);
 			cell5_3.setCellValue(jTextField7.getText());
                         
                           Cell cell5_4 = row5.createCell(4);
-			cell5_4.setCellValue("Rapor Tarihi Report Date");
+			cell5_4.setCellValue("Rapor Tarihi");
                         Cell cell5_5 = row5.createCell(5);
 			cell5_5.setCellValue(jDateChooser1.getDate()==null?"":jDateChooser1.getDate().toString());  
                         
                     Row row6 = sheet.createRow(rowIndex++);
 			Cell cell6_0 = row6.createCell(0);
-			cell6_0.setCellValue("Muayene Standardı \nInspection Standart");
+			cell6_0.setCellValue("Muayene Standardı");
                         Cell cell6_1 = row6.createCell(1);
 			cell6_1.setCellValue(jTextField3.getText());
                         
                         Cell cell6_2 = row6.createCell(2);
-			cell6_2.setCellValue("Yüzey Durumu \nSurface Condition");
+			cell6_2.setCellValue("Yüzey Durumu");
                         Cell cell6_3 = row6.createCell(3);
 			cell6_3.setCellValue(jComboBox2.getSelectedItem().toString());
                         
                           Cell cell6_4 = row6.createCell(4);
-			cell6_4.setCellValue(" İş Emri No \nJob Order No");
+			cell6_4.setCellValue(" İş Emri No");
                         Cell cell6_5 = row6.createCell(5);
 			cell6_5.setCellValue(jComboBox4.getSelectedItem().toString());       
                         
                         Row row7 = sheet.createRow(rowIndex++);
 			Cell cell7_0 = row7.createCell(0);
-			cell7_0.setCellValue("Değerlen. Standardı\nEvaluation Standart");
+			cell7_0.setCellValue("Değerlen. Standardı");
                         Cell cell7_1 = row7.createCell(1);
 			cell7_1.setCellValue(jTextField4.getText());
                         
                         Cell cell7_2 = row7.createCell(2);
-			cell7_2.setCellValue("Muayene Aşaması\nStage Of Examination");
+			cell7_2.setCellValue("Muayene Aşaması");
                         Cell cell7_3 = row7.createCell(3);
 			cell7_3.setCellValue(jComboBox3.getSelectedItem().toString());
                         
                           Cell cell7_4 = row7.createCell(4);
-			cell7_4.setCellValue("Teklif No \nOffer No");
+			cell7_4.setCellValue("Teklif No");
                         Cell cell7_5 = row7.createCell(5);
 			cell7_5.setCellValue(jComboBox5.getSelectedItem().toString()); 
                         
                     //Equipment Information
                     Row row8 = sheet.createRow(rowIndex++);
 			Cell cell8_0 = row.createCell(0);
-			cell8_0.setCellValue("Ekipman Bilgileri/ Equipment Informations");
+			cell8_0.setCellValue("Ekipman Bilgileri");
                         cell8_0.setCellStyle(backgroundStyle);
                         
                       Row row9 = sheet.createRow(rowIndex++);
 			Cell cell9_0 = row9.createCell(0);
-			cell9_0.setCellValue("Kutup Mesafesi,mm\nPole Distance");
+			cell9_0.setCellValue("Kutup Mesafesi,mm");
                         Cell cell9_1 = row9.createCell(1);
 			cell9_1.setCellValue(jTextField10.getText());
                         
                         Cell cell9_2 = row9.createCell(2);
-			cell9_2.setCellValue("Muayene Bölgesi \nExamination Area");
+			cell9_2.setCellValue("Muayene Bölgesi");
                         Cell cell9_3 = row9.createCell(3);
-			cell9_3.setCellValue(jTextField10.getText());
+			cell9_3.setCellValue(jTextField16.getText());
                         
                           Cell cell9_4 = row9.createCell(4);
-			cell9_4.setCellValue("Yüzey Sıcaklığı (ºC)Surface Temperature");
+			cell9_4.setCellValue("Yüzey Sıcaklığı (ºC)");
                         Cell cell9_5 = row9.createCell(5);
 			cell9_5.setCellValue(jTextField21.getText()); 
                         
                         Row row10 = sheet.createRow(rowIndex++);
 			Cell cell10_0 = row10.createCell(0);
-			cell10_0.setCellValue("Cihaz\nEquipment");
+			cell10_0.setCellValue("Cihaz");
                         Cell cell10_1 = row10.createCell(1);
 			cell10_1.setCellValue(jTextField11.getText());
                         
                         Cell cell10_2 = row10.createCell(2);
-			cell10_2.setCellValue("Akım Tipi\nCurrent Type");
+			cell10_2.setCellValue("Akım Tipi");
                         Cell cell10_3 = row10.createCell(3);
 			cell10_3.setCellValue(jComboBox7.getSelectedItem().toString());
                         
                           Cell cell10_4 = row10.createCell(4);
-			cell10_4.setCellValue("Muayene Bölgesindeki Alan Şiddeti, kA/m\nGauss Field Strength");
+			cell10_4.setCellValue("Muayene Bölgesindeki Alan Şiddeti");
                         Cell cell10_5 = row10.createCell(5);
 			cell10_5.setCellValue(jTextField22.getText()); 
                         
                          Row row11 = sheet.createRow(rowIndex++);
 			Cell cell11_0 = row11.createCell(0);
-			cell11_0.setCellValue("MP Taşıyıcı Ortam\nMP Carrier Medium");
+			cell11_0.setCellValue("MP Taşıyıcı Ortam");
                         Cell cell11_1 = row11.createCell(1);
 			cell11_1.setCellValue(jTextField12.getText());
                         
                         Cell cell11_2 = row11.createCell(2);
-			cell11_2.setCellValue("Luxmetre/Işık Şiddeti\nLuxmeter");
+			cell11_2.setCellValue("Luxmetre/Işık Şiddeti");
                         Cell cell11_3 = row11.createCell(3);
 			cell11_3.setCellValue(jTextField12.getText());
                         
                          Row row12 = sheet.createRow(rowIndex++);
 			Cell cell12_0 = row12.createCell(0);
-			cell12_0.setCellValue("Mıknatıslama Tekniği\nMag.Tech.");
+			cell12_0.setCellValue("Mıknatıslama Tekniği");
                         Cell cell12_1 = row12.createCell(1);
 			cell12_1.setCellValue(jTextField13.getText());
                         
                         Cell cell12_2 = row12.createCell(2);
-			cell12_2.setCellValue("Muayene Ortamı\nTest Medium");
+			cell12_2.setCellValue("Muayene Ortamı");
                         Cell cell12_3 = row12.createCell(3);
 			cell12_3.setCellValue(jTextField18.getText());
                         
                           Cell cell12_4 = row12.createCell(4);
-			cell12_4.setCellValue("Yüzey\nSurface Condition");
+			cell12_4.setCellValue("Yüzey");
                         Cell cell12_5 = row12.createCell(5);
 			cell12_5.setCellValue(jTextField23.getText()); 
                         
                           Row row13 = sheet.createRow(rowIndex++);
 			Cell cell13_0 = row13.createCell(0);
-			cell13_0.setCellValue("UV Işık Şiddeti\nUV Light Intensity");
+			cell13_0.setCellValue("UV Işık Şiddeti");
                         Cell cell13_1 = row13.createCell(1);
 			cell13_1.setCellValue(jTextField14.getText());
                         
                         Cell cell13_2 = row13.createCell(2);
-			cell13_2.setCellValue("Mıknatıs Giderimi\nDemagnetization");
+			cell13_2.setCellValue("Mıknatıs Giderimi");
                         Cell cell13_3 = row13.createCell(3);
 			cell13_3.setCellValue(jTextField19.getText());
                         
                           Cell cell13_4 = row13.createCell(4);
-			cell13_4.setCellValue("Işık Cihazı Tanımı\nIdentification of Light Equip.");
+			cell13_4.setCellValue("Işık Cihazı Tanımı");
                         Cell cell13_5 = row13.createCell(5);
 			cell13_5.setCellValue(jTextField24.getText()); 
                         
                         Row row14 = sheet.createRow(rowIndex++);
 			Cell cell14_0 = row14.createCell(0);
-			cell14_0.setCellValue("Işık mesafesi\nDistance of Light");
+			cell14_0.setCellValue("Işık mesaf.");
                         Cell cell14_1 = row14.createCell(1);
 			cell14_1.setCellValue(jTextField15.getText());
                         
                         Cell cell14_2 = row14.createCell(2);
-			cell14_2.setCellValue("Isıl İşlem\nHeat Treatment");
+			cell14_2.setCellValue("Isıl İşlem");
                         Cell cell14_3 = row14.createCell(3);
 			cell14_3.setCellValue(jTextField20.getText());
                         
                           Cell cell14_4 = row14.createCell(4);
-			cell14_4.setCellValue("Kaldırma Testi Tarih /\n No Lifting Test Date / Number");
+			cell14_4.setCellValue("Kaldırma Testi Tarih");
                         Cell cell14_5 = row14.createCell(5);
 			cell14_5.setCellValue(jTextField25.getText()); 
                         
                     //lbl section
-                    Row row15 = sheet.createRow(rowIndex++);
+          /*          Row row15 = sheet.createRow(rowIndex++);
 			Cell cell15_0 = row15.createCell(0);
-			cell15_0.setCellValue("Süreksizliğin Yeri / Location of Discontinuity");
+			cell15_0.setCellValue("Süreksizliğin Yeri");
                         cell15_0.setCellStyle(backgroundStyle);
                         
 		Row row16 = sheet.createRow(rowIndex++);
@@ -1741,51 +1734,51 @@ public class bericht extends javax.swing.JFrame {
 			cell19_0.setCellValue("B");
                         Cell cell19_1 = row19.createCell(1);
 			cell19_1.setCellValue(jLabel43.getText());
-                        
+                   */     
                       // 2 Column
                         Row row21 = sheet.createRow(rowIndex++); 
                         Cell cell21_0 = row21.createCell(0);
-			cell21_0.setCellValue("Standarttan Sapmalar\nStandard Deviations");
+			cell21_0.setCellValue("Standarttan Sapmalar");
                         Cell cell21_1 = row21.createCell(1);
 			cell21_1.setCellValue(jTextField26.getText());
                         
                         Row row22 = sheet.createRow(rowIndex++); 
                         Cell cell22_0 = row22.createCell(0);
-			cell22_0.setCellValue("Muayene Tarihleri\nInspection Dates");
+			cell22_0.setCellValue("Muayene Tarihleri");
                         Cell cell22_1 = row22.createCell(1);
 			cell22_1.setCellValue(jDateChooser2.getDate()==null?"":jDateChooser2.getDate().toString());
                         
                         Row row23 = sheet.createRow(rowIndex++); 
                         Cell cell23_0 = row23.createCell(0);
-			cell23_0.setCellValue("Açıklamalar ve Ekler\nDescription and Attachments");
+			cell23_0.setCellValue("Açıklama.");
                         Cell cell23_1 = row23.createCell(1);
 			cell23_1.setCellValue(jTextField27.getText());
                         
                       //Inspection result
                        Row row24 = sheet.createRow(rowIndex++);
 			Cell cell124_0 = row24.createCell(0);
-			cell124_0.setCellValue("Muayene Sonuçları /\n Inspection Results");
+			cell124_0.setCellValue("Muayene Sonuçları");
                         cell124_0.setCellStyle(backgroundStyle);
                       
                       Row row25 = sheet.createRow(rowIndex++); 
                         Cell cell25_0 = row25.createCell(0);
-			cell25_0.setCellValue("\"Sıra No\nSerial No\"");
+			cell25_0.setCellValue("\"Sıra No\"");
                         Cell cell25_1 = row25.createCell(1);
-			cell25_1.setCellValue("Kaynak/ Parça No Weld/ Piece No");
+			cell25_1.setCellValue("Kaynak No");
                         Cell cell25_2 = row25.createCell(2);
-			cell25_2.setCellValue("Kontrol Uzun.Test Lenght");
+			cell25_2.setCellValue("Kontrol Uz.");
                         Cell cell25_3 = row25.createCell(3);
-			cell25_3.setCellValue("Kaynak Yön. Welding Process");
+			cell25_3.setCellValue("Kaynak Yön.");
                         Cell cell25_4 = row25.createCell(4);
-			cell25_4.setCellValue("Kalınlık (mm) Thickness");
+			cell25_4.setCellValue("Kalınlık");
                         Cell cell25_5 = row25.createCell(5);
-			cell25_5.setCellValue("Çap (mm) Diameter");
+			cell25_5.setCellValue("Çap (mm)");
                          Cell cell25_6 = row25.createCell(6);
-			cell25_6.setCellValue("Hata Tipi\nDefect Type");
+			cell25_6.setCellValue("Hata Tipi");
                          Cell cell25_7 = row25.createCell(7);
-			cell25_7.setCellValue("Hatanın Yeri\nDefect Loc.");
+			cell25_7.setCellValue("Hata Yeri");
                          Cell cell25_8 = row25.createCell(8);
-			cell25_8.setCellValue("Sonuç\nResult");
+			cell25_8.setCellValue("Sonuç");
                         
                         Row row26 = sheet.createRow(rowIndex++); 
                         Cell cell26_0 = row26.createCell(0);
@@ -1990,19 +1983,19 @@ public class bericht extends javax.swing.JFrame {
                      //Operator, Bottom form
                       Row row36 = sheet.createRow(rowIndex++); 
                         Cell cell36_0 = row36.createCell(0);
-			cell36_0.setCellValue("Personel Bilgileri/ Person. Infor.");
+			cell36_0.setCellValue("Personel");
                         Cell cell36_1 = row36.createCell(1);
-			cell36_1.setCellValue("Operatör/ Operator");
+			cell36_1.setCellValue("Operatör");
                         Cell cell36_2 = row36.createCell(2);
-			cell36_2.setCellValue("Değerlendiren/ Evaluated by ");
+			cell36_2.setCellValue("Değerlend.");
                         Cell cell36_3 = row36.createCell(3);
-			cell36_3.setCellValue("Onay/ Confirmation ");
+			cell36_3.setCellValue("Onay");
                         Cell cell36_4 = row36.createCell(4);
-			cell36_4.setCellValue("Müşteri/ Customer");
+			cell36_4.setCellValue("Müşteri");
                         
                      Row row37 = sheet.createRow(rowIndex++); 
                         Cell cell37_0 = row37.createCell(0);
-			cell37_0.setCellValue("Adı Soyadı / Name Surname ");
+			cell37_0.setCellValue("Adı Soyadı");
                         Cell cell37_1 = row37.createCell(1);
 			cell37_1.setCellValue(jTextField108.getText());
                         Cell cell37_2 = row37.createCell(2);
@@ -2014,7 +2007,7 @@ public class bericht extends javax.swing.JFrame {
                         
                         Row row38 = sheet.createRow(rowIndex++); 
                         Cell cell38_0 = row38.createCell(0);
-			cell38_0.setCellValue("Seviye / Level");
+			cell38_0.setCellValue("Seviye");
                         Cell cell38_1 = row38.createCell(1);
 			cell38_1.setCellValue(jTextField109.getText());
                         Cell cell38_2 = row38.createCell(2);
@@ -2026,7 +2019,7 @@ public class bericht extends javax.swing.JFrame {
                         
                         Row row39 = sheet.createRow(rowIndex++); 
                         Cell cell39_0 = row39.createCell(0);
-			cell39_0.setCellValue("Tarih / Date");
+			cell39_0.setCellValue("Tarih");
                         Cell cell39_1 = row39.createCell(1);
 			cell39_1.setCellValue(jDateChooser3.getDate()==null?"":jDateChooser3.getDate().toString());
                         Cell cell39_2 = row39.createCell(2);
@@ -2038,7 +2031,7 @@ public class bericht extends javax.swing.JFrame {
                         
                         Row row40 = sheet.createRow(rowIndex++); 
                         Cell cell40_0 = row40.createCell(0);
-			cell40_0.setCellValue("İmza / Signature");
+			cell40_0.setCellValue("İmza");
                         Cell cell40_1 = row40.createCell(1);
 			cell40_1.setCellValue(jTextField111.getText());
                         Cell cell40_2 = row40.createCell(2);
@@ -2052,7 +2045,7 @@ public class bericht extends javax.swing.JFrame {
                         
                          Row row41 = sheet.createRow(rowIndex++); 
                         Cell cell41_0 = row41.createCell(0);
-			cell41_0.setCellValue("Doküman No: F.02 Yayın Tarihi : 01.05.2018 Revizyon No :01 Revizyon Tarihi :19.03.2019");
+			cell41_0.setCellValue("Doküman No: F.02 | Yayın Tarihi : 01.05.2018 | Revizyon No :01 | Revizyon Tarihi :19.03.2019");
                         
 		
 		
@@ -2076,6 +2069,10 @@ public class bericht extends javax.swing.JFrame {
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments
